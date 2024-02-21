@@ -14,7 +14,6 @@ if req.status_code == 200:
     paragraphs = soup.find_all('p')
     text_content = "\n".join([paragraph.get_text() for paragraph in paragraphs])
 
-    # Use OpenAI GPT-3.5 Turbo to generate a summary
     response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
